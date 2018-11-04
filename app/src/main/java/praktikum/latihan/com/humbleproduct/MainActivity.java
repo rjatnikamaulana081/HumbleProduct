@@ -2,8 +2,12 @@ package praktikum.latihan.com.humbleproduct;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -28,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         btn_belanja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,menu.class);
+                Intent intent = new Intent(MainActivity.this,ListMenuActivity.class);
                 startActivity(intent);
             }
         });
@@ -42,5 +46,33 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.profile:
+                startActivity(new Intent(MainActivity.this, ProfilActivity.class));
+                return true;
+            case R.id.seting:
+                Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+                startActivity(mIntent);
+                return true;
+            case R.id.maps:
+                Intent map = new Intent(Intent.ACTION_VIEW,Uri.parse("http://maps.google.com/maps?sddr=-6.917314&daddr=107.721009"));
+                startActivity(map);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }

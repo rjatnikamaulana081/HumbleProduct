@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">HUMBLEPRODUCT</string>
+    <string name="belanja">Shoping</string>
+    <string name="profile">Profile</string>
+    <string name="ganti_bahasa">Change Language</string>
+    <string name="maps">Maps</string>
+    <string name="alamat">addres</string>
+    <string name="telepon">Phone</string>
+    <string name="cek_harga">Check The Price</string>
+    <string name="total_harga">Total Price :</string>
+    <string name="beli">Buy</string>
+    <string name="nnn">Order Info</string>
+    <string name="mm">Thank You For Making A Booking</string>
+    <string name="y">YES</string>
+    <string name="lll">Order Is Being Processed</string>
 </resources>

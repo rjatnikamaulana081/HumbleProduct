@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HUMBLEPRODUCT</string>
+    <string name="belanja">Belanja</string>
+    <string name="profile">Info Pemilik</string>
+    <string name="ganti_bahasa">Ganti Bahasa</string>
+    <string name="maps">Alamat</string>
+    <string name="alamat">Alamat</string>
+    <string name="telepon">Telepon</string>
+    <string name="cek_harga">Cek Harga</string>
+    <string name="total_harga">Total Harga :</string>
+    <string name="beli">Beli</string>
+    <string name="nnn">Info Pesanan</string>
+    <string name="mm">Terima Kasih Telah Melakukan Pemesanan</string>
+    <string name="y">YA</string>
+    <string name="lll">Pemesanan Sedang Di Proses</string>
+</resources>

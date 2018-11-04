@@ -32,8 +32,24 @@ public class menu extends AppCompatActivity {
     CheckBox cbBaju3;
     @BindView(R.id.et_baju3)
     EditText etBaju3;
-    int baju1 = 55000, baju2 = 70000, baju3 = 80000;
-    int mBaju1 = 0, mBaju2 = 0, mBaju3 = 0;
+    @BindView(R.id.cb_baju4)
+    CheckBox cbBaju4;
+    @BindView(R.id.et_baju4)
+    EditText etBaju4;
+    @BindView(R.id.cb_baju5)
+    CheckBox cbBaju5;
+    @BindView(R.id.et_baju5)
+    EditText etBaju5;
+    @BindView(R.id.cb_baju6)
+    CheckBox cbBaju6;
+    @BindView(R.id.et_baju6)
+    EditText etBaju6;
+    @BindView(R.id.cb_baju7)
+    CheckBox cbBaju7;
+    @BindView(R.id.et_baju7)
+    EditText etBaju7;
+    int baju1 = 55000, baju2 = 70000, baju3 = 80000, baju4 = 225000, baju5 = 250000, baju6 = 350000, baju7 = 180000;
+    int mBaju1 = 0, mBaju2 = 0, mBaju3 = 0, mBaju4 = 0, mBaju5 = 0, mBaju6 = 0, mBaju7 = 0;
     @BindView(R.id.btn_cekharga)
     Button btnCekharga;
     @BindView(R.id.tv_totalharga)
@@ -57,16 +73,19 @@ public class menu extends AppCompatActivity {
         etBaju1.setFocusable(false);
         etBaju2.setFocusable(false);
         etBaju3.setFocusable(false);
+        etBaju4.setFocusable(false);
+        etBaju5.setFocusable(false);
+        etBaju6.setFocusable(false);
+        etBaju7.setFocusable(false);
     }
 
-    @OnClick({R.id.cb_baju1, R.id.cb_baju2, R.id.cb_baju3, R.id.btn_cekharga, R.id.btn_beli})
+    @OnClick({R.id.cb_baju1, R.id.cb_baju2, R.id.cb_baju3, R.id.cb_baju4, R.id.cb_baju5, R.id.cb_baju6,  R.id.cb_baju7, R.id.btn_cekharga, R.id.btn_beli})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.cb_baju1:
                 if (cbBaju1.isChecked()) {
                     etBaju1.setFocusable(true);
                     etBaju1.setFocusableInTouchMode(true);
-
                 }
                 break;
             case R.id.cb_baju2:
@@ -81,9 +100,53 @@ public class menu extends AppCompatActivity {
                     etBaju3.setFocusableInTouchMode(true);
                 }
                 break;
+            case R.id.cb_baju4:
+                if (cbBaju4.isChecked()) {
+                    etBaju4.setFocusable(true);
+                    etBaju4.setFocusableInTouchMode(true);
+                }
+                break;
+            case R.id.cb_baju5:
+                if (cbBaju5.isChecked()) {
+                    etBaju5.setFocusable(true);
+                    etBaju5.setFocusableInTouchMode(true);
+                }
+                break;
+            case R.id.cb_baju6:
+                if (cbBaju6.isChecked()) {
+                    etBaju6.setFocusable(true);
+                    etBaju6.setFocusableInTouchMode(true);
+                }
+                break;
+            case R.id.cb_baju7:
+                if (cbBaju7.isChecked()) {
+                    etBaju7.setFocusable(true);
+                    etBaju7.setFocusableInTouchMode(true);
+                }
+                break;
             case R.id.btn_cekharga:
                 if (i % 2 == 0) {
                     linearharga.setVisibility(View.VISIBLE);
+                    if (!TextUtils.isEmpty(etBaju7.getText().toString())) {
+                        mBaju7 = Integer.valueOf(etBaju7.getText().toString());
+                    } else {
+                        mBaju7 = 0;
+                    }
+                    if (!TextUtils.isEmpty(etBaju6.getText().toString())) {
+                        mBaju6 = Integer.valueOf(etBaju6.getText().toString());
+                    } else {
+                        mBaju6 = 0;
+                    }
+                    if (!TextUtils.isEmpty(etBaju5.getText().toString())) {
+                        mBaju5 = Integer.valueOf(etBaju5.getText().toString());
+                    } else {
+                        mBaju5 = 0;
+                    }
+                    if (!TextUtils.isEmpty(etBaju4.getText().toString())) {
+                        mBaju4 = Integer.valueOf(etBaju4.getText().toString());
+                    } else {
+                        mBaju4 = 0;
+                    }
                     if (!TextUtils.isEmpty(etBaju3.getText().toString())) {
                         mBaju3 = Integer.valueOf(etBaju3.getText().toString());
                     } else {
@@ -99,7 +162,7 @@ public class menu extends AppCompatActivity {
                     } else {
                         mBaju1 = 0;
                     }
-                    jumlah = (mBaju1 * baju1) + (mBaju2 * baju2) + (mBaju3 * baju3);
+                    jumlah = (mBaju1 * baju1) + (mBaju2 * baju2) + (mBaju3 * baju3) + (mBaju4 * baju4) + (mBaju5 * baju5) + (mBaju6 * baju6) + (mBaju7 * baju7);
                     tvTotalharga.setText(String.valueOf(jumlah));
                 } else {
                     linearharga.setVisibility(View.GONE);
@@ -108,12 +171,12 @@ public class menu extends AppCompatActivity {
                 break;
             case R.id.btn_beli:
                 AlertDialog alertDialog = new AlertDialog.Builder(menu.this).create();
-                alertDialog.setTitle("Info Pesanan");
+                alertDialog.setTitle(getString(R.string.nnn));
                 alertDialog.setIcon(R.drawable.home1);
-                alertDialog.setMessage("Terimakasih Sudah Melakukan Pemesanan");
-                alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                alertDialog.setMessage(getString(R.string.mm));
+                alertDialog.setButton(getString(R.string.y), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(), "Pesanan Sedang Di Proses", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.lll), Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(menu.this, MainActivity.class);
                         startActivity(i);
                     }

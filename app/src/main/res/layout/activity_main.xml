@@ -32,7 +32,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="alamat"
+            android:text="@string/alamat"
             android:textColor="@color/khaki"
             android:background="@color/hitam"/>
 
@@ -42,7 +42,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="belanja"
+            android:text="@string/belanja"
             android:textColor="@color/khaki"
             android:background="@color/hitam"/>
 
@@ -51,7 +51,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="telepon"
+            android:text="@string/telepon"
             android:textColor="@color/khaki"
             android:background="@color/hitam"/>
 
